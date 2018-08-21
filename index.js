@@ -1,6 +1,6 @@
 // default node packages
 const fs = require("fs");
-const url = require("url");
+// const url = require("url");
 const path = require("path");
 // third party
 const { Menu, globalShortcut } = require("electron");
@@ -74,12 +74,17 @@ mb.on("show", () => {
   );
 });
 
+// the hide event handler actually doesn't have any effect.
+// it seems the default behavior will handle it properly
 mb.on("hide", () => {
-  mb.tray.setHighlightMode("never");
-  Menu.sendActionToFirstResponder("hide:");
+  // console.log('it is gone');
+  // mb.tray.setHighlightMode("never"); // this line actually has no effect
+  // Menu.sendActionToFirstResponder("hide:"); // what does this line do?
 });
 
 mb.app.on("will-quit", () => {
   globalShortcut.unregisterAll();
   mb.app.quit();
 });
+
+

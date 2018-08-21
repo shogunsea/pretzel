@@ -75,7 +75,7 @@ function openReadmeURL() {
 }
 
 function setPretzelTheme() {
-  const theme = setting.getTheme() || "dark";
+  const theme = setting.getTheme() || "light";
   body.classList = "";
   body.classList.add(theme);
   theme === "dark" ? get(".mode").classList.add("active") : null;
