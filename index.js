@@ -14,6 +14,7 @@ const setting = require("./setting");
 const assetsDirectory = path.join(__dirname, "assets");
 const shortcutsDirectory = path.join(__dirname, "shortcuts");
 const mb = menubar({
+  index: 'file://' + path.join(__dirname, "window_template.html"), // customize the index page name
   icon: path.join(__dirname, "/assets/icon.png"),
   width: 300,
   height: 400,
@@ -68,6 +69,7 @@ mb.on("show", () => {
       if (err) {
         mb.window.webContents.send("noShortcuts", currentApp);
       } else {
+        // this only controls the content inside the window.
         mb.window.webContents.send("currentApp", currentAppFile);
       }
     }
