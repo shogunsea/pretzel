@@ -13,6 +13,8 @@ const setting = require("./setting");
 // variables
 const assetsDirectory = path.join(__dirname, "assets");
 const shortcutsDirectory = path.join(__dirname, "shortcuts");
+// The menu bar handles the click and blue event pretty nicely, you might
+// want to imp those by yourself.
 const mb = menubar({
   index: 'file://' + path.join(__dirname, "window_template.html"), // customize the index page name
   icon: path.join(__dirname, "/assets/icon.png"),
@@ -77,7 +79,9 @@ mb.on("show", () => {
 });
 
 // the hide event handler actually doesn't have any effect.
-// it seems the default behavior will handle it properly
+// it seems the default behavior will handle it properly?
+// ** Update: menubar handles the blue event and hide the window && update the tray highlight
+//  properly
 mb.on("hide", () => {
   // console.log('it is gone');
   // mb.tray.setHighlightMode("never"); // this line actually has no effect
