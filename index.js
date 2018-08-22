@@ -22,7 +22,8 @@ const mb = menubar({
   height: 400,
   resizable: false,
   showDockIcon: false,
-  preloadWindow: true
+  preloadWindow: true,
+  // windowPosition: 'center'
 });
 
 // setup objc bridge
