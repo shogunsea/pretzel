@@ -24,6 +24,7 @@ const mb = menubar({
   showDockIcon: false,
   preloadWindow: true,
   // windowPosition: 'center'
+  // showOnRightClick: true,
 });
 
 // setup objc bridge
