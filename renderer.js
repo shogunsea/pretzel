@@ -59,8 +59,10 @@ function toggleTitles() {
   });
 }
 
+// parse the yml file into json.
 function getShortcutConfig(name) {
   try {
+    // load the yml file or throw an exception.
     const config = yaml.safeLoad(
       fs.readFileSync(path.join(__dirname, `shortcuts/${name}`), "utf8")
     );
@@ -95,10 +97,12 @@ ipcRenderer.on("noShortcuts", (event, name) => {
   shortcutsContainer.innerHTML = html;
 });
 
+// eventhanlder where there's available shortcuts for current app
 ipcRenderer.on("currentApp", (event, name) => {
   const shortcuts = getShortcutConfig(name);
   let html = "";
 
+  // search input
   search.focus();
 
   for (var prop in shortcuts) {
