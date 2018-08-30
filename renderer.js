@@ -2,6 +2,7 @@
 const path = require("path");
 const fs = require("fs");
 // third party
+// ipcRender to listen for the show main window event
 const { ipcRenderer, remote, shell } = require("electron");
 const yaml = require("js-yaml");
 const setting = require("./setting");
